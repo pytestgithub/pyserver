@@ -13,3 +13,6 @@ jobs:
       - name: run server
         run: |
           python server.py
+      - name: run clinet
+        run: |
+          python client.py
