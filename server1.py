@@ -6,7 +6,7 @@ port=9999
 ser=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 ser.bind((host,port))
 print("socket server started")
-s.listen(10)
+ser.listen(10)
 print('# Socket now listening')
 
 # Wait for client
