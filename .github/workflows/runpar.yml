@@ -11,10 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-         python server.py
+         python server1.py
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: |
-         python client.py
+         python client1.py
