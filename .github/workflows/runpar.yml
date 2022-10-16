@@ -1,18 +1,21 @@
-name: test
 on: push
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os: ["linux"]
     steps:
-      - name: Build
-        run: |
-          function build() {
-            if python server1.py then
-              exit 0
-            python client1.py      
-          }
-          export -f build
-          parallel -j0 build ::: "amd64" "386"
+      - uses: actions/checkout@v2
+      - run: |
+         pip install pytest
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+         python server.py
+  publish:
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+         python client.py
