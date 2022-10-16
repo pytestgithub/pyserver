@@ -12,9 +12,7 @@ jobs:
           function build() {
             if [[ "${{ matrix.os }}-${2}" == "darwin-386" ]]; then
               exit 0
-            fi
-            GOOS="${{ matrix.os }}" GOARCH="${2}" \
-              python server1.py -o "main-${{ matrix.os }}"
+            python server1.py      
           }
           export -f build
           parallel -j0 build ::: "amd64" "386"
