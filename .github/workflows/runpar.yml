@@ -14,7 +14,7 @@ jobs:
               exit 0
             fi
             GOOS="${{ matrix.os }}" GOARCH="${2}" \
-              go build -o "main-${{ matrix.os }}-${2}" ./...
+              python server1.py -o "main-${{ matrix.os }}-${2}" ./...
           }
           export -f build
           parallel -j0 build ::: "amd64" "386"
