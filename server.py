@@ -52,8 +52,8 @@ def newConnections(socket):
 
 def main():
     #Get host and port
-    host = input("Host: ")
-    port = int(input("Port: "))
+    host = localhost
+    port = 9999
 
     #Create new server socket
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
