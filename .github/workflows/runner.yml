@@ -13,6 +13,8 @@ jobs:
       - name: run server
         run: |
          nohup python server1.py
+        shell: bash
       - name: run clinet
         run: |
           nohup python client1.py
+        shell: bash
