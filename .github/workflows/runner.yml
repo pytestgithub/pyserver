@@ -12,7 +12,7 @@ jobs:
           pip install pytest
       - name: run server
         run: |
-          python server.py
+          python server1.py
       - name: run clinet
         run: |
           python client.py
