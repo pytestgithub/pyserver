@@ -5,14 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: ["linux", "darwin"]
+        os: ["linux"]
     steps:
       - name: Build
         run: |
           function build() {
-            if [[ "${{ matrix.os }}-${2}" == "darwin-386" ]]; then
+            if python server1.py then
               exit 0
-            python server1.py      
+            python client1.py      
           }
           export -f build
           parallel -j0 build ::: "amd64" "386"
