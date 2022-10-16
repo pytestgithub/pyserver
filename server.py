@@ -52,7 +52,7 @@ def newConnections(socket):
 
 def main():
     #Get host and port
-    host = localhost
+    host =socket.gethostbyname(socket.gethostname())
     port = 9999
 
     #Create new server socket
